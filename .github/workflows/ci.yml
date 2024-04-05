@@ -3,10 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - gh-pages
-  push:
-    branches:
-      - gh-pages
+      - main
 
 jobs:
   build:
@@ -20,11 +17,11 @@ jobs:
       - name: Install node packages
         run: yarn
         
-      # - name: Check lint
-      #   run: yarn check:lint
+      - name: Check lint
+        run: yarn check:lint
         
-      # - name: Check prettier
-      #   run: yarn check:prettier
+      - name: Check prettier
+        run: yarn check:prettier
       
       - name: Build
         run: yarn build
